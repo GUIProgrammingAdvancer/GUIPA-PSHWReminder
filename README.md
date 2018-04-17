@@ -1,2 +1,18 @@
 # GUIPA-PSHWReminder
-A GUIPA sub project, Problem Solving Homework Reminder
+
+爬虫部分
+
+## TODO
+
+* [ ] 问求作业解析
+  * [x] 网页爬取
+  * [x] wiki源码识别
+  * [x] 区分出每次作业
+  * [ ] 对每次作业进行解析
+  * [ ] 整理数据格式（主要是日期）
+
+* [ ] OJ解析
+  * [ ] 读取比赛
+  * [ ] 识别题目来源
+  * [ ] 从搜索引擎爬取博客题解 ~~、源码~~
+  * [ ] ~~自动提交~~
