@@ -5,6 +5,8 @@ import time
 import json
 import re
 from bs4 import BeautifulSoup
+
+from models import Homework
 # Create your views here.
 
 def downloadpage(url):
@@ -51,7 +53,20 @@ def parsePSHW(html):
 	return homeworks
 
 def dumpPSHW(homeworks):
-	return 1
+	flag = "nothing updated"
+	for homework in homeworks:
+		if Homework.objects.get(date=homework['date']) is None:
+			newhw = Homework()
+			newhw.date = homework['date']
+			newhw.homework = homework['homework']
+			newhw.preview = homework['preview']
+			newhw.topic = homework['topic']
+			newhw.guide = homework['guide']
+			newhw.target = homework['target']
+			newhw.opentopic = homework['ot']
+			newhw.save()
+			flag = "updated"
+	return flag
 
 def startparse(req):
 	name = req.GET.get('name', 0)
