@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from PSHWparser import views as PSHWparser_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('startparse/', PSHWparser_views.startparse),
 ]

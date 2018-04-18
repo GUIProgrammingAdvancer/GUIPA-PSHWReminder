@@ -6,7 +6,7 @@ import json
 import re
 from bs4 import BeautifulSoup
 
-from models import Homework
+from PSHWparser.models import Homework
 # Create your views here.
 
 def downloadpage(url):
@@ -55,7 +55,9 @@ def parsePSHW(html):
 def dumpPSHW(homeworks):
 	flag = "nothing updated"
 	for homework in homeworks:
-		if Homework.objects.get(date=homework['date']) is None:
+		try:
+			Homework.objects.get(date=homework['date'])
+		except Homework.DoesNotExist:
 			newhw = Homework()
 			newhw.date = homework['date']
 			newhw.homework = homework['homework']
