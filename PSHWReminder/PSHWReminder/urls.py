@@ -20,5 +20,7 @@ from PSHWparser import views as PSHWparser_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('startparse/', PSHWparser_views.startparse),
+    path('startparse/', PSHWparser_views.startParse),
+    path('getall/', PSHWparser_views.getAll),
+    path('getlast/', PSHWparser_views.getLast),
 ]
