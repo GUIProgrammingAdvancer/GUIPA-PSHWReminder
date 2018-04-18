@@ -25,6 +25,8 @@
 
 ## 2.爬虫部分
 
+For standalone version, goto [crawl branch](https://github.com/forewing/GUIPA-PSHWReminder/tree/crawl).
+
 ### TODO
 
 * [x] 问求作业解析
